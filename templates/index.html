@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Predictor</title>
+</head>
+<body>
+    <h1>Loan Predictor</h1>
+
+    <form action="/predict" method="post">
+
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="Age" value ="{{Age}}" required><br><br>
+
+        <label for="Income">Income:</label>
+        <input type="number" id="Income" name="Income" value="{{Income}}" required><br><br>
+
+        <label for="Loan_Amount">Loan_Amount:</label>
+        <input type="number" id="Loan_Amount" name="Loan_Amount" value="{{Loan_Amount}}" required><br><br>
+
+        <label for="Credit_Score">Credit_Score:</label>
+        <input type="number" id="Credit_Score" name="Credit_Score" value ="{{Credit_Score}}" required><br><br>
+
+        <input type="submit" value="Predict">
+
+        {% if prediction_text %}
+        <p>{{ prediction_text }}</p>
+        {% endif %}
+</body>
+</html>
